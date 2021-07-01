@@ -1,0 +1,33 @@
+.form{
+	width: 80%;
+	max-width: 850px;
+	margin: auto;
+}
+.title{
+	text-align: center;
+	font-size: 100px;
+}
+.input_form{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+.input_description{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.input_description_label{
+	width: 20%;
+}
+.input_description_box{
+	width: 350px;
+	height: 100px;
+}
+.input_label{
+	width: 20%;
+}
+.input_button{
+	display: flex;
+	justify-content: center;
+}
