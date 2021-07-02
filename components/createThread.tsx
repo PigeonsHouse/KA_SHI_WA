@@ -45,6 +45,9 @@ const CreateThreadCard = (props) => {
 		})
 		setCreating(false)
 	}
+	const stopCreateThread = () => {
+		setCreating(false);
+	}
 	return(
 		<div className={style.thread_card_create} key='create' onClick={startCreateThread}>
 			{
@@ -52,7 +55,10 @@ const CreateThreadCard = (props) => {
 				<>
 					<form onSubmit={createThread}>
 						<input type='text' name='threadName' onChange={handleChange} />
-						<input type='submit' value='作成' />
+						<div>
+							<input type='button' value='戻る' onClick={stopCreateThread} />
+							<input type='submit' value='作成' />
+						</div>
 					</form>
 				</>
 			):<div className={style.thread_card_create_icon}>+</div>
