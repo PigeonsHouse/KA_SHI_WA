@@ -1,10 +1,15 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import style from '../styles/timeline.module.css';
+import { useDispatch } from "react-redux";
+import { useTimelineState } from "../modules/timeline/selector";
+import timelineSlice from "../modules/timeline/slice";
 
 const baseUrl = process.env.backendBaseUrl;
 
-const CreateThreadCard = (props) => {
+const CreateThreadCard = () => {
+	const dispatch = useDispatch();
+	const state = useTimelineState().timeline;
 	const [threadName, setThreadName] =useState('');
 	const [isCreating, setCreating] = useState(false);
 	const startCreateThread = () => {
@@ -18,16 +23,18 @@ const CreateThreadCard = (props) => {
 		e.preventDefault();
 		let config = {
 			headers: {
-				'jwt-token': 'Bearer ' + props.jwt
+				'jwt-token': 'Bearer ' + state.jwt
 			}
 		}
 		let request = {
 			"name": threadName
 		}
 		let meDict;
+		let newThreadData;
 		axios.get(baseUrl + 'users/me', config)
 		.then((res) => {
 			meDict = res.data;
+			console.log(meDict)
 		})
 		.catch((err) => {
 			console.error(err);
@@ -36,7 +43,11 @@ const CreateThreadCard = (props) => {
 		axios.post(baseUrl + 'threads', request, config)
 		.then((res) => {
 			if(res.status === 200){
-				props.addTemp(meDict, res.data);
+				newThreadData = res.data;
+				newThreadData.author = meDict;
+				console.log(newThreadData, meDict)
+				dispatch(timelineSlice.actions.addThread(newThreadData));
+				dispatch(timelineSlice.actions.setSelectedThread(newThreadData.key));
 			}
 		})
 		.catch((err) => {

@@ -20,6 +20,9 @@
 }
 .thread_card_title{
 	margin: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .thread_card_author{
 	margin: 0;
