@@ -20,7 +20,8 @@ export default () => {
 	})
 	return (
 		<div className={style.timeline}>
-			<Threads jwt={jwt}/>
+			<Threads jwt={jwt} />
+			<input type="button" value="SignOut" onClick={SignOut} />
 		</div>
 	)
 }
