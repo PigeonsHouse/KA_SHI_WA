@@ -6,6 +6,7 @@
 .title{
 	text-align: center;
 	font-size: 100px;
+	color: var(--literal-color);
 }
 .input_form{
 	display: flex;
@@ -19,6 +20,8 @@
 }
 .input_description_label{
 	width: 20%;
+	font-weight: bold;
+	color: var(--literal-color);
 }
 .input_description_box{
 	width: 350px;
@@ -26,6 +29,8 @@
 }
 .input_label{
 	width: 20%;
+	font-weight: bold;
+	color: var(--literal-color);
 }
 .input_button{
 	display: flex;
