@@ -16,6 +16,20 @@ a {
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: #884242;
+  border: none;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background: #bb8585;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
 :root{
   --literal-color: #993232;
   --strong-color: #FF4646;
