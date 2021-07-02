@@ -42,8 +42,6 @@ export default () => {
 	useEffect(() => {
 		if(jwt)
 			localStorage.setItem('jwt', jwt);
-		if(localStorage.getItem('jwt'))
-			router.push('/timeline');
 	})
 
 	return (
