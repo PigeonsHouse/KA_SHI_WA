@@ -1,0 +1,49 @@
+.timeline{
+	background-color: var(--base-color);
+}
+.thread_wrapper{
+	background-color: var(--sub-color);
+	padding: 6px 0 3px;
+	width: 250px;
+	border-radius: 3px;
+}
+.thread_card{
+	background-color: #0000;
+	color: var(--literal-color);
+	padding: 5px 0;
+	display: block;
+	width: 98%;
+	height: 70px;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+.thread_card_title{
+	margin: 0;
+}
+.thread_card_author{
+	margin: 0;
+}
+.thread_card_selected{
+	background-color: var(--base-color);
+	color: var(--literal-color);
+}
+.thread_card_create{
+	background-color: var(--accent-color);
+	color: var(--literal-color);
+	padding: 5px 0;
+	display: block;
+	width: 98%;
+	height: 70px;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+.thread_card_create_icon{
+	font-size: 30px;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}

@@ -1,5 +1,7 @@
 import { useRouter } from "next/dist/client/router";
 import { useEffect, useState } from "react"
+import Threads from "../components/threads";
+import style from "../styles/timeline.module.css";
 
 export default () => {
 	const router = useRouter();
@@ -17,9 +19,8 @@ export default () => {
 			setJWT(localJWT);
 	})
 	return (
-		<>
-			タイムラインだよ～
-			<input value="サインアウト" type="button" onClick={SignOut}/>
-		</>
+		<div className={style.timeline}>
+			<Threads jwt={jwt}/>
+		</div>
 	)
 }
