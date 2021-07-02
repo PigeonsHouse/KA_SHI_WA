@@ -9,7 +9,7 @@ export default function Home() {
         <div className={style.go_button_wrapper}>
           <div className={style.go_button}>
             <Link href="/signup">
-              Go SignUp
+              SignUp
             </Link>
           </div>
         </div>
@@ -18,7 +18,7 @@ export default function Home() {
         <div className={style.go_button_wrapper}>
           <div className={style.go_button}>
             <Link href="/signin">
-              Go SignIn
+              SignIn
             </Link>
           </div>
         </div>
