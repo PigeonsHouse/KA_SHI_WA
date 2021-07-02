@@ -10,18 +10,18 @@ export default () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [jwt, setJWT] = useState(null);
-  const handleChange = (event) => {
-    switch (event.target.name) {
-      case 'email':
-        setEmail(event.target.value);
-        break;
-      case 'password':
-        setPassword(event.target.value);
-        break;
-      default:
-        console.log('key not found');
-    }
-  };
+	const handleChange = (event) => {
+		switch (event.target.name) {
+			case 'email':
+				setEmail(event.target.value);
+				break;
+			case 'password':
+				setPassword(event.target.value);
+				break;
+			default:
+				console.log('key not found');
+		}
+	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const payload = {

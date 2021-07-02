@@ -11,24 +11,24 @@ export default () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [description, setDescription] = useState('');
-  const handleChange = (event) => {
-    switch (event.target.name) {
-      case 'name':
-        setName(event.target.value);
-        break;
-      case 'email':
-        setEmail(event.target.value);
-        break;
-      case 'password':
-        setPassword(event.target.value);
-        break;
-      case 'description':
-        setDescription(event.target.value);
-        break;
-      default:
-        console.log('key not found');
-    }
-  };
+	const handleChange = (event) => {
+		switch (event.target.name) {
+			case 'name':
+				setName(event.target.value);
+				break;
+			case 'email':
+				setEmail(event.target.value);
+				break;
+			case 'password':
+				setPassword(event.target.value);
+				break;
+			case 'description':
+				setDescription(event.target.value);
+				break;
+			default:
+				console.log('key not found');
+		}
+	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const payload = {
