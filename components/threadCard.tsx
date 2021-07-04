@@ -7,9 +7,10 @@ const ThreadCard = (props) => {
 	const dispatch = useDispatch();
 	const state = useTimelineState().timeline;
 	const threadInfo = props.threadInfo;
-	let isSelected = (state.selectedThread === threadInfo.key)
+	let isSelected = (state.selectedThreadID === threadInfo.key)
 	const selectThread = (e) => {
-		dispatch(timelineSlice.actions.setSelectedThread(e.currentTarget.id));
+		dispatch(timelineSlice.actions.setSelectedThread(threadInfo.name));
+		dispatch(timelineSlice.actions.setSelectedThreadID(threadInfo.key));
 	}
 
 	return(

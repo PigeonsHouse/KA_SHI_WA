@@ -16,7 +16,8 @@ const Threads = () => {
 		axios.get(baseUrl + 'threads?limit=100')
 		.then((res) => {
 			setStoreThreads(res.data);
-			setStoreSelectedThread(res.data[0].key);
+			setStoreSelectedThread(res.data[0].name);
+			setStoreSelectedThreadID(res.data[0].key);
 		})
 		.catch((err) => {
 			console.error(err);
@@ -24,6 +25,9 @@ const Threads = () => {
 	}
 	const setStoreSelectedThread = (thread_id: string) => {
 		dispatch(timelineSlice.actions.setSelectedThread(thread_id));
+	}
+	const setStoreSelectedThreadID = (thread_id: string) => {
+		dispatch(timelineSlice.actions.setSelectedThreadID(thread_id));
 	}
 	const setStoreThreads = (dataList: Array<Object>) => {
 		dispatch(timelineSlice.actions.setThreads(dataList));
@@ -34,13 +38,13 @@ const Threads = () => {
 
 	return(
 		<div className={style.thread_wrapper}>
-			{state.threadObjectArray.map((threadInfo) => {
-				return <ThreadCard threadInfo={threadInfo} />
-			})}
 			{state.jwt ? (
 			<CreateThreadCard />
 			): null
 			}
+			{state.threadObjectArray.map((threadInfo) => {
+				return <ThreadCard threadInfo={threadInfo} />
+			})}
 		</div>
 	)	
 }

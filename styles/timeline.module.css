@@ -1,3 +1,29 @@
+.timeline{
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+}
+.user_card{
+	background-color: var(--accent-color);
+	padding: 10px;
+	border-radius: 3px;
+	display: flex;
+	justify-content:space-between;
+	margin-bottom: 10px;
+}
+.user_card h2{
+	margin: 0;
+}
+.user_card p{
+	margin: 0;
+}
+.user_card input{
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	background-color: var(--strong-color);
+	color: var(--base-color);
+}
 .thread_wrapper{
 	background-color: var(--sub-color);
 	padding: 6px 0 3px;
@@ -49,4 +75,75 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+.post_wrapper{
+	background-color: var(--strong-color);
+	padding: 6px 12px 3px;
+	border-radius: 3px;
+	margin-right: 20px;
+	max-width: 100%;
+}
+.post_card{
+	background-color: var(--base-color);
+	color: var(--literal-color);
+	padding: 5px 0;
+	display: block;
+	width: 800px;
+	max-width: 100%;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+.post_card_text{
+	margin: 0;
+	width: 85%;
+	min-height: 48px;
+	white-space:pre-wrap;
+}
+.post_card_author{
+	margin: 0;
+}
+.post_card_selected{
+	background-color: var(--base-color);
+	color: var(--literal-color);
+}
+.post_card_create{
+	background-color: var(--accent-color);
+	color: var(--literal-color);
+	padding: 5px 0;
+	display: flex;
+	width: 800px;
+	max-width: 100%;
+	min-height: 70px;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.post_card_create_form {
+	width: 100%;
+}
+.post_card_create_form textarea{
+	resize: none;
+	width: 100%;
+}
+.post_card_create_icon{
+	font-size: 30px;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.post_card_time{
+	font-size: 13px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	height: 20px;
+}
+.post_card_time p{
+	margin: 0;
 }

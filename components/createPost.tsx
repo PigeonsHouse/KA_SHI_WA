@@ -7,17 +7,17 @@ import timelineSlice from "../modules/timeline/slice";
 
 const baseUrl = process.env.backendBaseUrl;
 
-const CreateThreadCard = () => {
+const CreatePostCard = () => {
 	const dispatch = useDispatch();
 	const state = useTimelineState().timeline;
-	const [threadName, setThreadName] =useState('');
+	const [postContent, setPostContent] =useState('');
 	const [isCreating, setCreating] = useState(false);
 	const startCreateThread = () => {
 		if(!isCreating) setCreating(true);
 	}
 	const handleChange = (event) => {
-		if(event.target.name === 'threadName')
-			setThreadName(event.target.value);
+		if(event.target.name === 'postContent')
+			setPostContent(event.target.value);
 	};
 	const createThread = (e) => {
 		e.preventDefault();
@@ -27,18 +27,21 @@ const CreateThreadCard = () => {
 			}
 		}
 		let request = {
-			"name": threadName
+			"thread_key": state.selectedThreadID,
+			"content": postContent
 		}
 		let meDict = state.me;
 		let newThreadData;
-		axios.post(baseUrl + 'threads', request, config)
+		axios.post(baseUrl + 'posts', request, config)
 		.then((res) => {
 			if(res.status === 200){
 				newThreadData = res.data;
 				newThreadData.author = meDict;
-				console.log(newThreadData, meDict)
-				dispatch(timelineSlice.actions.addThread(newThreadData));
-				dispatch(timelineSlice.actions.setSelectedThreadID(newThreadData.key));
+				if(state.postObjectArray[0].created_at === undefined){
+					dispatch(timelineSlice.actions.setPosts([newThreadData]));
+				}else{
+					dispatch(timelineSlice.actions.addPost(newThreadData));
+				}
 			}
 		})
 		.catch((err) => {
@@ -51,22 +54,22 @@ const CreateThreadCard = () => {
 		setCreating(false);
 	}
 	return(
-		<div className={style.thread_card_create} key='create' onClick={startCreateThread}>
+		<div className={style.post_card_create} key='create' onClick={startCreateThread}>
 			{
 			isCreating ? (
 				<>
-					<form onSubmit={createThread}>
-						<input type='text' name='threadName' onChange={handleChange} />
+					<form className={style.post_card_create_form} onSubmit={createThread}>
+						<textarea name='postContent' onChange={handleChange} rows={6} required></textarea>
 						<div>
 							<input type='button' value='戻る' onClick={stopCreateThread} />
 							<input type='submit' value='作成' />
 						</div>
 					</form>
 				</>
-			):<div className={style.thread_card_create_icon}>+</div>
+			):<div className={style.post_card_create_icon}>+</div>
 			}
 		</div>
 	)
 }
 
-export default CreateThreadCard;
+export default CreatePostCard;
