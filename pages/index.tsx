@@ -6,7 +6,7 @@ import style from '../styles/home.module.css';
 export default function Home() {
   const router = useRouter();
   useEffect(() => {
-		if(localStorage.getItem('jwt'))
+		if(localStorage.getItem('kashiwa_jwt'))
 			router.push('/timeline');
   })
   return (
