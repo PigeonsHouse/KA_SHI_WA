@@ -11,12 +11,16 @@
 	justify-content:space-between;
 	margin-bottom: 10px;
 	color: var(--literal-color);
+	width: 250px;
+	max-height: 160px;
+	overflow: hidden;
 }
 .user_card h2{
 	margin: 0;
 }
 .user_card p{
 	margin: 0;
+	width: 100%;
 }
 .user_card input{
 	height: 30px;
