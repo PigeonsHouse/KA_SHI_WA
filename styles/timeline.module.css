@@ -4,7 +4,7 @@
 	min-height: 100vh;
 }
 .user_card{
-	background-color: var(--accent-color);
+	background-color: var(--sub-color);
 	padding: 10px;
 	border-radius: 3px;
 	display: flex;
@@ -113,7 +113,7 @@
 	height: 100%;
 }
 .post_wrapper{
-	background-color: var(--literal-color);
+	background-color: var(--sub-color);
 	padding: 6px 12px 3px;
 	border-radius: 3px;
 	margin-right: 20px;
@@ -134,7 +134,7 @@
 	white-space:pre-wrap;
 }
 .post_card{
-	background-color: var(--sub-color);
+	background-color: var(--base-color);
 	color: var(--literal-color);
 	padding: 5px;
 	display: block;
