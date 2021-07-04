@@ -41,7 +41,7 @@ export default () => {
 
 	useEffect(() => {
 		if(jwt)
-			localStorage.setItem('jwt', jwt);
+			localStorage.setItem('kashiwa_jwt', jwt);
 	})
 
 	return (
