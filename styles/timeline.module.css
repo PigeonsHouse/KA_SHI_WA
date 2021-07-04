@@ -51,7 +51,7 @@
 .thread_card{
 	background-color: #0000;
 	color: var(--literal-color);
-	padding: 5px 0;
+	padding: 5px 2px;
 	display: block;
 	width: 98%;
 	height: 70px;
@@ -134,15 +134,19 @@
 	white-space:pre-wrap;
 }
 .post_card{
-	background-color: var(--base-color);
+	background-color: var(--sub-color);
 	color: var(--literal-color);
-	padding: 5px 0;
+	padding: 5px;
 	display: block;
 	width: 800px;
 	max-width: 100%;
 	margin: 0 auto;
 	border-radius: 3px;
 	margin-bottom: 3px;
+}
+.post_card_header{
+	display: flex;
+	justify-content: space-between;
 }
 .post_card_text{
 	margin: 0;
@@ -156,6 +160,16 @@
 .post_card_selected{
 	background-color: var(--base-color);
 	color: var(--literal-color);
+}
+.post_card_delete_button{
+	border: 0;
+	background-color: var(--base-color);
+	color: var(--literal-color);
+	height: 100%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-weight: bold;
+	border-radius: 10px;
 }
 .post_card_create{
 	background-color: var(--accent-color);

@@ -24,7 +24,7 @@ const Posts = () => {
 			if(err.response.status === 404){
 				setStorePosts([
 					{
-						id: 0,
+						key: '0',
 						content: "投稿が存在しません。",
 						author: {
 							name: ''

@@ -1,6 +1,14 @@
+import axios from "axios";
+import { useTimelineState } from "../modules/timeline/selector";
+import { useDispatch } from "react-redux";
 import style from '../styles/timeline.module.css';
+import timelineSlice from "../modules/timeline/slice";
+
+const baseUrl = process.env.backendBaseUrl;
 
 const PostCard = (props) => {
+	const dispatch = useDispatch();
+	const state = useTimelineState().timeline;
 	const threadInfo = props.threadInfo;
 	const twoZeroFill = (num) => {
 		const zero = '00';
@@ -15,10 +23,39 @@ const PostCard = (props) => {
 			return null
 		}
 	}
+	const deletePost = () => {
+		console.log(threadInfo.key)
+		let config = {
+			headers: {
+				'jwt-token': 'Bearer ' + state.jwt
+			}
+		}
+		axios.delete(baseUrl + 'posts/' + String(threadInfo.key), config)
+		.then((res) => {
+			let deletedPostArray = state.postObjectArray.filter((obj) => {return obj.key !== threadInfo.key})
+			if(deletedPostArray.length < 1)
+			deletedPostArray = [
+				{
+					key: '0',
+					content: "投稿が存在しません。",
+					author: {
+						name: ''
+					}
+				}
+			];
+			dispatch(timelineSlice.actions.setPosts(deletedPostArray));
+		})
+		.catch((err) => {
+			console.log(err.response);
+		})
+	}
 
 	return(
 		<div className={style.post_card} key={threadInfo.key}>
-			<h2 className={style.post_card_author}>{threadInfo.author.name}</h2>
+			<div className={style.post_card_header}>
+				<h2 className={style.post_card_author}>{threadInfo.author.name}</h2>
+				{(threadInfo.author.name === state.me.name) ? (<input className={style.post_card_delete_button} type='button' value='Ｘ' onClick={deletePost} />) : (<></>)}
+			</div>
 			<h4 className={style.post_card_text}>{threadInfo.content}</h4>
 			<div className={style.post_card_time}>
 				<p>{ getTimeString(threadInfo.created_at) }</p>
