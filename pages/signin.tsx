@@ -1,5 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
 import style from '../styles/sign.module.css'
 
@@ -53,6 +54,10 @@ export default () => {
 				</div>
 				<div className={style.input_form}>
 					<input className={style.input_box} placeholder='パスワード' name="password" type="password" value={password} onChange={handleChange} required />
+				</div>
+				<div className={style.link}>
+					<Link href='/'>ホーム</Link>
+					<Link href='/signup'>アカウント登録はこちら</Link>
 				</div>
 				<div className={style.input_button}>
 					<input type="submit" className={style.submit}></input>

@@ -62,3 +62,10 @@
 	background-color: var(--strong-color);
 	color: var(--base-color);
 }
+.link a{
+	text-align: center;
+	margin: 0 30%;
+	display: block;
+	color: var(--strong-color);
+	margin-bottom: 10px;
+}

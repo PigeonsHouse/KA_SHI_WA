@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from '../styles/sign.module.css'
+import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 
 const baseUrl = process.env.backendBaseUrl;
@@ -11,6 +12,7 @@ export default () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [description, setDescription] = useState('');
+	const [jwt, setJWT] = useState(null);
 	const handleChange = (event) => {
 		switch (event.target.name) {
 			case 'name':
@@ -39,13 +41,34 @@ export default () => {
 		}
 		axios.post(baseUrl + 'auth/signup', payload)
 		.then((res) => {
-			alert("Success sign up");
-			router.push('/');
+			if (res.status === 200)
+				SignIn();
 		})
 		.catch((err) => {
 			console.error(err);
 		})
 	}
+
+	const SignIn = () => {
+		const payload = {
+			"email": email,
+			"password": password
+		}
+		axios.post(baseUrl + 'auth/signin', payload)
+		.then((res) => {
+			console.log(res.data.jwt);
+			setJWT(res.data.jwt);
+			router.push('/timeline');
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
+	useEffect(() => {
+		if(jwt)
+			localStorage.setItem('kashiwa_jwt', jwt);
+	})
 
 	return (
 		<div>
@@ -62,6 +85,10 @@ export default () => {
 				</div>
 				<div className={style.input_form}>
 					<textarea name="description" className={style.input_description_box} value={description} onChange={handleChange} placeholder='プロフィール'/>
+				</div>
+				<div className={style.link}>
+					<Link href='/'>ホーム</Link>
+					<Link href='/signin'>登録済みの方はこちら</Link>
 				</div>
 				<div className={style.input_button}>
 					<input type="submit" className={style.submit} value='登録'></input>
