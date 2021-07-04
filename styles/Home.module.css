@@ -9,23 +9,26 @@
 	margin: 100px;
 	color: var(--literal-color);
 }
-.signin_wrapper{
-	width: 50%;
-	display: inline-block;
-}
-.go_button_wrapper{
-	display: block;
+.button_wrapper{
+	display: flex;
+	width: 100%;
 }
 .go_button{
 	margin: auto;
-	width: 40%;
+	width: 30%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	color: var(--literal-color);
-	background-color: var(--accent-color);
+	background-color: var(--sub-color);
+	border-radius: 30px;
+}
+.go_button:active {
+	background-color: var(--strong-color);
+	color: var(--base-color);
 }
 .go_button a{
 	display: flex;
 	justify-content: center;
+	padding: 20px;
 }

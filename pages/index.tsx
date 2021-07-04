@@ -11,23 +11,22 @@ export default function Home() {
   })
   return (
     <div className={style.home}>
-      <h1 className={style.title}>KA SHI WA</h1>
-      <div className={style.signin_wrapper}>
-        <div className={style.go_button_wrapper}>
-          <div className={style.go_button}>
-            <Link href="/signup">
-              SignUp
-            </Link>
-          </div>
+      <h1 className={style.title}> Kashiwa </h1>
+      <div className={style.button_wrapper}>
+        <div className={style.go_button}>
+          <Link href="/signup">
+            アカウント作成
+          </Link>
         </div>
-      </div>
-      <div className={style.signin_wrapper}>
-        <div className={style.go_button_wrapper}>
-          <div className={style.go_button}>
-            <Link href="/signin">
-              SignIn
-            </Link>
-          </div>
+        <div className={style.go_button}>
+          <Link href="/signin">
+            ログイン
+          </Link>
+        </div>
+        <div className={style.go_button}>
+          <Link href="/timeline">
+            タイムラインを見る
+          </Link>
         </div>
       </div>
     </div>
