@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import style from '../styles/signin.module.css'
+import style from '../styles/sign.module.css'
 import { useRouter } from 'next/dist/client/router';
 
 const baseUrl = process.env.backendBaseUrl;
@@ -49,26 +49,22 @@ export default () => {
 
 	return (
 		<div>
-			<h1 className={style.title}>Sign Up</h1>
+			<h1 className={style.title}>Sign up</h1>
 			<form onSubmit={handleSubmit} className={style.form}>
 				<div className={style.input_form}>
-					<label className={style.input_label}>name</label>
-					<input name="name" type="text" value={name} onChange={handleChange} />
+					<input className={style.input_box} name="name" type="text" value={name} onChange={handleChange} placeholder='名前' required />
 				</div>
 				<div className={style.input_form}>
-					<label className={style.input_label}>email</label>
-					<input name="email" type="text" value={email} onChange={handleChange} />
+					<input className={style.input_box} name="email" type="text" value={email} onChange={handleChange} placeholder='メールアドレス' required />
 				</div>
 				<div className={style.input_form}>
-					<label className={style.input_label}>password</label>
-					<input name="password" type="password" value={password} onChange={handleChange} />
+					<input className={style.input_box} name="password" type="password" value={password} onChange={handleChange} placeholder='パスワード' required />
 				</div>
-				<div className={style.input_description}>
-					<label className={style.input_description_label}>description</label>
-					<input name="description" type="text" className={style.input_description_box} value={description} onChange={handleChange} />
+				<div className={style.input_form}>
+					<textarea name="description" className={style.input_description_box} value={description} onChange={handleChange} placeholder='プロフィール'/>
 				</div>
 				<div className={style.input_button}>
-					<input type="submit"></input>
+					<input type="submit" className={style.submit} value='登録'></input>
 				</div>
 			</form>
 		</div>

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import style from '../styles/signin.module.css'
+import style from '../styles/sign.module.css'
 
 const baseUrl = process.env.backendBaseUrl;
 
@@ -46,18 +46,16 @@ export default () => {
 
 	return (
 		<div>
-			<h1 className={style.title}>Sign In</h1>
+			<h1 className={style.title}>Sign in</h1>
 			<form onSubmit={handleSubmit} className={style.form}>
 				<div className={style.input_form}>
-					<label className={style.input_label}>email</label>
-					<input name="email" type="text" value={email} onChange={handleChange} />
+					<input className={style.input_box} placeholder='メールアドレス' name="email" type="text" value={email} onChange={handleChange} required />
 				</div>
 				<div className={style.input_form}>
-					<label className={style.input_label}>password</label>
-					<input name="password" type="password" value={password} onChange={handleChange} />
+					<input className={style.input_box} placeholder='パスワード' name="password" type="password" value={password} onChange={handleChange} required />
 				</div>
 				<div className={style.input_button}>
-					<input type="submit"></input>
+					<input type="submit" className={style.submit}></input>
 				</div>
 			</form>
 		</div>

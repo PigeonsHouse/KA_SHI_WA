@@ -20,12 +20,12 @@ a {
   width: 10px;
 }
 ::-webkit-scrollbar-track{
-  background: #884242;
+  background: var(--literal-color);
   border: none;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb{
-  background: #bb8585;
+  background: var(--highlight-color);
   border-radius: 10px;
   box-shadow: none;
 }
@@ -36,4 +36,5 @@ a {
   --accent-color: #FF8585;
   --sub-color: #FFB396;
   --base-color: #FFF5C0;
+  --highlight-color: #BB8585;
 }

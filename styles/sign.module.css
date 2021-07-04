@@ -12,6 +12,8 @@
 	display: flex;
 	justify-content: center;
 	margin-bottom: 10px;
+	resize: none;
+	width: 100%;
 }
 .input_description{
 	display: flex;
@@ -23,9 +25,19 @@
 	font-weight: bold;
 	color: var(--literal-color);
 }
+.input_box{
+	width: 350px;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid var(--literal-color);
+}
 .input_description_box{
 	width: 350px;
 	height: 100px;
+	resize: none;
+	border-radius: 10px;
+	border: 1px solid var(--literal-color);
+	padding: 4px;
 }
 .input_label{
 	width: 20%;
@@ -34,5 +46,19 @@
 }
 .input_button{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+}
+.submit{
+	border-radius: 30px;
+	color: var(--literal-color);
+	background-color: var(--sub-color);
+	border: 0;
+	padding: 10px 0;
+	width: 30%;
+}
+.submit:active{
+	background-color: var(--strong-color);
+	color: var(--base-color);
 }
