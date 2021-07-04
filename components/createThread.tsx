@@ -38,6 +38,7 @@ const CreateThreadCard = () => {
 				newThreadData.author = meDict;
 				console.log(newThreadData, meDict)
 				dispatch(timelineSlice.actions.addThread(newThreadData));
+				dispatch(timelineSlice.actions.setSelectedThread(newThreadData.name));
 				dispatch(timelineSlice.actions.setSelectedThreadID(newThreadData.key));
 			}
 		})
@@ -55,11 +56,11 @@ const CreateThreadCard = () => {
 			{
 			isCreating ? (
 				<>
-					<form onSubmit={createThread}>
-						<input type='text' name='threadName' onChange={handleChange} />
-						<div>
-							<input type='button' value='戻る' onClick={stopCreateThread} />
-							<input type='submit' value='作成' />
+					<form className={style.thread_card_create_form} onSubmit={createThread}>
+						<input className={style.thread_card_create_box} type='text' name='threadName' onChange={handleChange} />
+						<div className={style.thread_card_create_buttons}>
+							<input className={style.thread_card_create_button} type='button' value='戻る' onClick={stopCreateThread} />
+							<input className={style.thread_card_create_button} type='submit' value='作成' />
 						</div>
 					</form>
 				</>

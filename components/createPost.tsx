@@ -59,10 +59,10 @@ const CreatePostCard = () => {
 			isCreating ? (
 				<>
 					<form className={style.post_card_create_form} onSubmit={createThread}>
-						<textarea name='postContent' onChange={handleChange} rows={6} required></textarea>
-						<div>
-							<input type='button' value='戻る' onClick={stopCreateThread} />
-							<input type='submit' value='作成' />
+						<textarea className={style.post_card_create_box} name='postContent' onChange={handleChange} rows={6} required></textarea>
+						<div className={style.post_card_create_buttons}>
+							<input className={style.post_card_create_button} type='button' value='戻る' onClick={stopCreateThread} />
+							<input className={style.post_card_create_button} type='submit' value='作成' />
 						</div>
 					</form>
 				</>

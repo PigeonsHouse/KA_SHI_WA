@@ -10,6 +10,7 @@
 	display: flex;
 	justify-content:space-between;
 	margin-bottom: 10px;
+	color: var(--literal-color);
 }
 .user_card h2{
 	margin: 0;
@@ -32,6 +33,16 @@
 	max-height: 593px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+}
+.thread_list_title{
+	background-color: var(--strong-color);
+	color: var(--base-color);
+	padding: 5px 8px;
+	display: block;
+	width: 98%;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
 }
 .thread_card{
 	background-color: #0000;
@@ -68,6 +79,27 @@
 	border-radius: 3px;
 	margin-bottom: 3px;
 }
+.thread_card_create_form{
+	padding: 0 3px;
+}
+.thread_card_create_box{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid var(--literal-color);
+	height: 25px;
+	margin-bottom: 4px;
+}
+.thread_card_create_buttons{
+	display: flex;
+	justify-content:space-between;
+	align-items: center
+}
+.thread_card_create_button{
+	border-radius: 10px;
+	border: 0;
+	background-color: var(--strong-color);
+	color: var(--base-color);
+}
 .thread_card_create_icon{
 	font-size: 30px;
 	display: flex;
@@ -77,11 +109,25 @@
 	height: 100%;
 }
 .post_wrapper{
-	background-color: var(--strong-color);
+	background-color: var(--literal-color);
 	padding: 6px 12px 3px;
 	border-radius: 3px;
 	margin-right: 20px;
 	max-width: 100%;
+}
+.post_list_title{
+	background-color: var(--strong-color);
+	color: var(--base-color);
+	padding: 5px 8px;
+	display: block;
+	width: 800px;
+	max-width: 100%;
+	margin: 0 auto;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+.post_list_title h2{
+	white-space:pre-wrap;
 }
 .post_card{
 	background-color: var(--base-color);
@@ -123,11 +169,25 @@
 	justify-content: center;
 }
 .post_card_create_form {
+	padding: 0 20px;
 	width: 100%;
 }
-.post_card_create_form textarea{
+.post_card_create_box{
 	resize: none;
 	width: 100%;
+	border-radius: 10px;
+	border: 1px solid var(--literal-color);
+}
+.post_card_create_buttons{
+	display: flex;
+	justify-content:space-between;
+	align-items: center
+}
+.post_card_create_button{
+	border-radius: 10px;
+	border: 0;
+	background-color: var(--strong-color);
+	color: var(--base-color);
 }
 .post_card_create_icon{
 	font-size: 30px;

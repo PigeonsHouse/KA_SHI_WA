@@ -38,6 +38,9 @@ const Threads = () => {
 
 	return(
 		<div className={style.thread_wrapper}>
+			<div className={style.thread_list_title}>
+				<h2 className={style.thread_card_author}>{'ThreadList'}</h2>
+			</div>
 			{state.jwt ? (
 			<CreateThreadCard />
 			): null

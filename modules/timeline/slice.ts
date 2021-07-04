@@ -19,6 +19,15 @@ interface PostObject extends Object {
   updated_at?: number
 }
 
+interface ThreadObject extends Object {
+	key?: string,
+	name?: string,
+	author_key?: string,
+	author?: UserObject,
+	created_at?: number,
+	updated_at?: number
+}
+
 export type TimelineState = {
 	jwt: string;
 	selectedThread: string,

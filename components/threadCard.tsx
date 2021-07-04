@@ -16,7 +16,7 @@ const ThreadCard = (props) => {
 	return(
 		<div className={style.thread_card + ' ' + (isSelected ? style.thread_card_selected : null)} key={threadInfo.key} id={threadInfo.key} onClick={selectThread}>
 			<h3 className={style.thread_card_title}>{threadInfo.name}</h3>
-			<p className={style.thread_card_author}>{threadInfo.author.name}</p>
+			<p className={style.thread_card_author}>{'made by '+threadInfo.author.name}</p>
 		</div>
 	)	
 }

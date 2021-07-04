@@ -17,6 +17,9 @@ export default () => {
 	const SignOut = () => {
 		setStoreJWT('exit');
 	}
+	const SignIn = () => {
+		router.push('/signin')
+	}
 	const setStoreJWT = (jwt) => {
 		dispatch(timelineSlice.actions.setJWT(jwt));
 	}
@@ -49,18 +52,21 @@ export default () => {
 			<div className={style.timeline}>
 				<Posts />
 				<div>
-					{state.jwt ? (
-						<div>
-							<div className={style.user_card}>
-								<div className={style.user_data}>
-									<h2>{state.me.name}</h2>
-									<p>{state.me.description}</p>
-								</div>
-								<input type="button" value="SignOut" onClick={SignOut} />
+					<div>
+						<div className={style.user_card}>
+							<div className={style.user_data}>
+								<h2>{state.jwt ? state.me.name : 'Guest'}</h2>
+								<p>{state.me.description}</p>
 							</div>
+							{
+								state.jwt?(
+									<input type="button" value="Sign Out" onClick={SignOut} />
+								):(
+									<input type="button" value="Sign In" onClick={SignIn} />
+								)
+							}
 						</div>
-					): null
-					}
+					</div>
 					<Threads />
 				</div>
 			</div>
