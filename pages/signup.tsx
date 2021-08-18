@@ -6,7 +6,7 @@ import { useRouter } from 'next/dist/client/router';
 
 const baseUrl = process.env.backendBaseUrl;
 
-export default () => {
+const SignUp = () => {
 	const router = useRouter();
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -97,3 +97,5 @@ export default () => {
 		</div>
 	)
 }
+
+export default SignUp;

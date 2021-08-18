@@ -6,7 +6,7 @@ import style from '../styles/sign.module.css'
 
 const baseUrl = process.env.backendBaseUrl;
 
-export default () => {
+const SignIn = () => {
 	const router = useRouter();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -66,3 +66,5 @@ export default () => {
 		</div>
 	)
 }
+
+export default SignIn;

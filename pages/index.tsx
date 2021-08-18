@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 import style from '../styles/home.module.css';
 
-export default function Home() {
+const Home = () => {
   const router = useRouter();
   useEffect(() => {
 		if(localStorage.getItem('kashiwa_jwt'))
@@ -32,3 +32,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

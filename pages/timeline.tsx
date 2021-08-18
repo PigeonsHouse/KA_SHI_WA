@@ -10,7 +10,7 @@ import axios from "axios";
 
 const baseUrl = process.env.backendBaseUrl;
 
-export default () => {
+const Timeline = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const state = useTimelineState().timeline;
@@ -73,3 +73,5 @@ export default () => {
 		</div>
 	)
 }
+
+export default Timeline;
